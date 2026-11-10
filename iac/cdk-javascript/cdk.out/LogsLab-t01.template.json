@@ -101,7 +101,7 @@
       "Value": "t01"
      }
     ],
-    "VpcId": "vpc-0123456789abcdef0"
+    "VpcId": "vpc-00e8cfbd647718185"
    },
    "Metadata": {
     "aws:cdk:path": "LogsLab-t01/WebSg/Resource"

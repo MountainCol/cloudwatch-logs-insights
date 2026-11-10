@@ -1,13 +1,13 @@
 {
   "region": "eu-west-2",
-  "vpcId": "vpc-0123456789abcdef0",
+  "vpcId": "vpc-00e8cfbd647718185",
   "webSubnets": [
-    { "id": "subnet-0aaaaaaaaaaaaaaaa", "az": "eu-west-2a" },
-    { "id": "subnet-0bbbbbbbbbbbbbbbb", "az": "eu-west-2b" }
+    { "id": "subnet-02aaa27e241010c15", "az": "eu-west-2a" },
+    { "id": "subnet-00cefdbb6d81d0065", "az": "eu-west-2b" }
   ],
   "dbSubnets": [
-    { "id": "subnet-0cccccccccccccccc", "az": "eu-west-2a" },
-    { "id": "subnet-0dddddddddddddddd", "az": "eu-west-2b" }
+    { "id": "subnet-07de4eaa6e4493579", "az": "eu-west-2a" },
+    { "id": "subnet-020396a95401b6e34", "az": "eu-west-2b" }
   ],
   "assignPublicIp": false,
   "webIngressCidr": "",

@@ -16,16 +16,16 @@
         }
       }
     },
-    "c0f397163e016075883fdf2cc56e07af29d2098edec454e040b4ad8402b2c443": {
+    "9ba9b00a7e68c1327361fd5cb3da3f1c8ee9fb082e4a67a6e7c88f9bb3cd5b0d": {
       "displayName": "LogsLabShared Template",
       "source": {
         "path": "LogsLabShared.template.json",
         "packaging": "file"
       },
       "destinations": {
-        "827602716979-eu-west-2-ae79168e": {
+        "827602716979-eu-west-2-67b3be30": {
           "bucketName": "cdk-hnb659fds-assets-827602716979-eu-west-2",
-          "objectKey": "c0f397163e016075883fdf2cc56e07af29d2098edec454e040b4ad8402b2c443.json",
+          "objectKey": "9ba9b00a7e68c1327361fd5cb3da3f1c8ee9fb082e4a67a6e7c88f9bb3cd5b0d.json",
           "region": "eu-west-2",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::827602716979:role/cdk-hnb659fds-file-publishing-role-827602716979-eu-west-2"
         }

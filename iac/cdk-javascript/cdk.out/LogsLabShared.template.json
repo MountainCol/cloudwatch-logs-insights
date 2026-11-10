@@ -609,7 +609,7 @@
       "Value": "cloudwatch-logs-insights"
      }
     ],
-    "VpcId": "vpc-0123456789abcdef0"
+    "VpcId": "vpc-00e8cfbd647718185"
    },
    "Metadata": {
     "aws:cdk:path": "LogsLabShared/DbSg/Resource"
@@ -621,7 +621,7 @@
     "DBSubnetGroupDescription": "Lab 12 shared database subnet group",
     "SubnetIds": [
      "subnet-07de4eaa6e4493579",
-     "subnet-00cefdbb6d81d0065"
+     "subnet-020396a95401b6e34"
     ],
     "Tags": [
      {
@@ -757,7 +757,7 @@
       "Value": "cloudwatch-logs-insights"
      }
     ],
-    "VpcId": "vpc-0123456789abcdef0"
+    "VpcId": "vpc-00e8cfbd647718185"
    },
    "Metadata": {
     "aws:cdk:path": "LogsLabShared/GeneratorSg/Resource"

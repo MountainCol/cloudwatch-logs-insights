@@ -3,14 +3,14 @@ Trainee ID: t03          Region: eu-west-2 (Europe, London)
 
 Your web server (Linux)
   Instance name ........... LinuxEC2Host-t03
-  Instance ID ............. i-03d687fbe8d7a89aa
-  Private IP address ...... 10.0.12.236
+  Instance ID ............. i-04e4b53d02d471818
+  Private IP address ...... 10.0.5.163
 
 Names you will type
   Run Command, Task 1.3 ... tag key CloudwatchAgentInstalled, tag value t03
   Run Command, Task 1.4 ... tag key MonitoringConfig, tag value BasicMixOSMonitoring-t03
   Agent configuration ..... ConfigParamForEC2s-t03
-  Output bucket ........... logslabshared-logbucketcc3b17e8-f3ze8olmpbbb   (S3 key prefix: t03)
+  Output bucket ........... logslabshared-logbucketcc3b17e8-9ef7k0gckrpo   (S3 key prefix: t03)
   Flow log group (you create it) ... VPCFlowLogGroup-t03
   Flow log service role ... LogsLab-VPCFlowLogsRole
   Your log groups ......... AccessLogGroup-t03 and SSHLogGroup-t03

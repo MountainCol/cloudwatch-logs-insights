@@ -5,6 +5,7 @@ Set-up code for the lab described in `Lab-Guide-CloudWatch-Logs-Insights.docx`. 
 Region: Europe (London) `eu-west-2`. Infrastructure as Code (IaC): AWS Cloud Development Kit (CDK) in JavaScript. Existing Virtual Private Cloud (VPC) only. Linux web servers only. One shared Amazon Relational Database Service (RDS) MySQL instance for the whole class.
 
 ## Contents
+
 | Path | Purpose |
 |---|---|
 | `iac/cdk-javascript/app.js`, `package.json`, `cdk.json` | The CDK app: one shared stack plus one stack per trainee |
@@ -16,8 +17,9 @@ Region: Europe (London) `eu-west-2`. Infrastructure as Code (IaC): AWS Cloud Dev
 | `trainee-policy.example.json` | Example permissions for trainee users (untested; see guide, Appendix A) |
 
 ## Quick start (instructor)
+
 ```bash
-./scripts/preflight-existing-vpc.sh --vpc-id vpc-XXXX --trainees 12
+./scripts/preflight-existing-vpc.sh --vpc-id vpc-XXXX --trainees 3
 cp lab-config.example.json iac/cdk-javascript/lab-config.json   # then edit it
 cd iac/cdk-javascript && npm install
 npx cdk synth
@@ -28,6 +30,7 @@ cd ../.. && ./scripts/check-readiness.sh            # add --install-agent to pre
 ```
 
 ## Tear-down
+
 ```bash
 ./scripts/cleanup-lab-resources.sh --trainees t01,t02,... --phase before
 (cd iac/cdk-javascript && npx cdk destroy --all)
@@ -35,4 +38,5 @@ cd ../.. && ./scripts/check-readiness.sh            # add --install-agent to pre
 ```
 
 ## Status
+
 Version 1.2. Version 1.0 failed on a launch-template name clash (removed `requireImdsv2`). Version 1.1 could not give servers public addresses because the CDK refuses `associatePublicIpAddress` for subnets imported by ID; 1.2 sets the network interface on the underlying instance resource instead. Not yet redeployed: run the pilot checklist (guide, Appendix C).

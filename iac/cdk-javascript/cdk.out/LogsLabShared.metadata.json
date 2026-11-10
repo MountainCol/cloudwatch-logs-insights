@@ -3,7 +3,7 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     },
@@ -37,11 +37,11 @@
         "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:53437)",
         "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\prop-injectable.js:1:861)",
         "Subnet2.fromSubnetAttributes (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:35023)",
-        "importSubnet (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:86:21)",
-        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:167:54",
+        "importSubnet (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:91:21)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:172:54",
         "Array.map (<anonymous>)",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:167:40)",
-        "Object.<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:172:40)",
+        "Object.<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "Module._compile (node:internal/modules/cjs/loader:1968:14)",
         "Object..js (node:internal/modules/cjs/loader:2108:10)",
         "Module.load (node:internal/modules/cjs/loader:1690:32)",
@@ -55,18 +55,18 @@
   "/LogsLabShared/DbSubnet1": [
     {
       "type": "aws:cdk:warning",
-      "data": "No routeTableId was provided to the subnet 'subnet-00cefdbb6d81d0065'. Attempting to read its .routeTable.routeTableId will return null/undefined. (More info: https://github.com/aws/aws-cdk/pull/3171) [ack: @aws-cdk/aws-ec2:noSubnetRouteTableId]",
+      "data": "No routeTableId was provided to the subnet 'subnet-020396a95401b6e34'. Attempting to read its .routeTable.routeTableId will return null/undefined. (More info: https://github.com/aws/aws-cdk/pull/3171) [ack: @aws-cdk/aws-ec2:noSubnetRouteTableId]",
       "trace": [
         "Annotations.addMessage (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:3506)",
         "Annotations.addWarningV2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:2194)",
         "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:53437)",
         "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\prop-injectable.js:1:861)",
         "Subnet2.fromSubnetAttributes (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:35023)",
-        "importSubnet (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:86:21)",
-        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:167:54",
+        "importSubnet (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:91:21)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:172:54",
         "Array.map (<anonymous>)",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:167:40)",
-        "Object.<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:172:40)",
+        "Object.<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "Module._compile (node:internal/modules/cjs/loader:1968:14)",
         "Object..js (node:internal/modules/cjs/loader:2108:10)",
         "Module.load (node:internal/modules/cjs/loader:1690:32)",
@@ -87,9 +87,9 @@
         "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:53437)",
         "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\prop-injectable.js:1:861)",
         "Subnet2.fromSubnetAttributes (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:35023)",
-        "importSubnet (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:86:21)",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:258:31)",
-        "Object.<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "importSubnet (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:91:21)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:263:31)",
+        "Object.<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "Module._compile (node:internal/modules/cjs/loader:1968:14)",
         "Object..js (node:internal/modules/cjs/loader:2108:10)",
         "Module.load (node:internal/modules/cjs/loader:1690:32)",
@@ -109,8 +109,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Instance2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:252:23)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)"
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:257:23)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)"
       ]
     }
   ],
@@ -122,8 +122,8 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:271:5)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:276:5)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -136,8 +136,8 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:272:5)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:277:5)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -150,8 +150,8 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:273:5)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:278:5)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -164,8 +164,8 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:274:5)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:279:5)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -178,8 +178,8 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:275:5)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:280:5)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -192,8 +192,8 @@
     {
       "type": "aws:cdk:creationStack",
       "data": [
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:276:5)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:281:5)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -233,8 +233,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Bucket2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:110:23)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:115:23)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     },
@@ -280,8 +280,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Role2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:119:22)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:124:22)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -295,8 +295,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Bucket2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:135:27)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:140:27)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     },
@@ -316,8 +316,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new LogGroup2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:142:29)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:147:29)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -331,8 +331,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Trail2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:147:7)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:152:7)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -346,8 +346,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new SecurityGroup2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:159:17)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:164:17)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -361,8 +361,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new SubnetGroup2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:164:25)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:169:25)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -376,8 +376,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new DatabaseInstance2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:170:15)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:175:15)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -391,8 +391,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new SecurityGroup2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:192:24)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:197:24)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -406,8 +406,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Role2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:197:21)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:202:21)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -421,8 +421,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Instance2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:252:23)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:257:23)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -436,8 +436,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Instance2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:252:23)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:257:23)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -516,8 +516,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Bucket2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:110:23)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)"
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:115:23)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)"
       ]
     },
     {
@@ -549,8 +549,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...PropertyInjectable.<anonymous> in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:124:14)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:129:14)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -564,8 +564,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Bucket2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:135:27)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)"
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:140:27)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)"
       ]
     },
     {
@@ -597,8 +597,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Trail2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:147:7)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:152:7)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -612,8 +612,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new DatabaseInstance2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:170:15)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)"
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:175:15)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)"
       ]
     }
   ],
@@ -626,8 +626,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...PropertyInjectable.<anonymous> in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:201:13)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:206:13)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -641,8 +641,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Trail2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:147:7)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:152:7)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }
@@ -656,8 +656,8 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new DatabaseInstance2 in aws-cdk-lib...",
-        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:170:15)",
-        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:175:15)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)",
         "...node internals..."
       ]
     }

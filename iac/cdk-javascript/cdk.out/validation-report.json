@@ -27,7 +27,7 @@
                 ]
               },
               "stackTraces": [
-                "...new DatabaseInstance2 in aws-cdk-lib...\nnew SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:170:15)\n<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)\n...node internals..."
+                "...new DatabaseInstance2 in aws-cdk-lib...\nnew SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:175:15)\n<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:423:16)\n...node internals..."
               ]
             }
           ]

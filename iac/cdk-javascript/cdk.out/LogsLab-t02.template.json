@@ -101,7 +101,7 @@
       "Value": "t02"
      }
     ],
-    "VpcId": "vpc-0123456789abcdef0"
+    "VpcId": "vpc-00e8cfbd647718185"
    },
    "Metadata": {
     "aws:cdk:path": "LogsLab-t02/WebSg/Resource"
@@ -296,7 +296,7 @@
       ]
      }
     ],
-    "SubnetId": "subnet-020396a95401b6e34",
+    "SubnetId": "subnet-00cefdbb6d81d0065",
     "Tags": [
      {
       "Key": "CloudwatchAgentInstalled",
