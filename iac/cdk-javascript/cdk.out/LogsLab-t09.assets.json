@@ -1,0 +1,21 @@
+{
+  "version": "55.0.0",
+  "files": {
+    "1af0e8b729a88cdce3bea63aa8e339c2f12082e62441a2cdfec2d6bb27781ad4": {
+      "displayName": "LogsLab-t09 Template",
+      "source": {
+        "path": "LogsLab-t09.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "827602716979-eu-west-2-752bf509": {
+          "bucketName": "cdk-hnb659fds-assets-827602716979-eu-west-2",
+          "objectKey": "1af0e8b729a88cdce3bea63aa8e339c2f12082e62441a2cdfec2d6bb27781ad4.json",
+          "region": "eu-west-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::827602716979:role/cdk-hnb659fds-file-publishing-role-827602716979-eu-west-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

@@ -1,0 +1,327 @@
+{
+  "/LogsLab-t08": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:templateFile",
+      "data": "LogsLab-t08.template.json"
+    },
+    {
+      "type": "aws:cdk:stack-tags",
+      "data": [
+        {
+          "key": "LabName",
+          "value": "cloudwatch-logs-insights"
+        },
+        {
+          "key": "Trainee",
+          "value": "t08"
+        }
+      ]
+    }
+  ],
+  "/LogsLab-t08/WebSubnet": [
+    {
+      "type": "aws:cdk:warning",
+      "data": "No routeTableId was provided to the subnet 'subnet-00cefdbb6d81d0065'. Attempting to read its .routeTable.routeTableId will return null/undefined. (More info: https://github.com/aws/aws-cdk/pull/3171) [ack: @aws-cdk/aws-ec2:noSubnetRouteTableId]",
+      "trace": [
+        "Annotations.addMessage (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:3506)",
+        "Annotations.addWarningV2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:2194)",
+        "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:53437)",
+        "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\prop-injectable.js:1:861)",
+        "Subnet2.fromSubnetAttributes (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:35023)",
+        "importSubnet (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:86:21)",
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:394:31)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:17",
+        "Array.forEach (<anonymous>)",
+        "Object.<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "Module._compile (node:internal/modules/cjs/loader:1968:14)",
+        "Object..js (node:internal/modules/cjs/loader:2108:10)",
+        "Module.load (node:internal/modules/cjs/loader:1690:32)",
+        "Module._load (node:internal/modules/cjs/loader:1480:12)",
+        "wrapModuleLoad (node:internal/modules/cjs/loader:261:19)",
+        "Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)",
+        "node:internal/main/run_main_module:33:47"
+      ]
+    }
+  ],
+  "/LogsLab-t08/SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-x86_64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61x8664C96584B6F00A464EAD1953AFF4B05118Parameter"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Instance2 in aws-cdk-lib...",
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:388:17)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)"
+      ]
+    }
+  ],
+  "/LogsLab-t08/WebInstanceId": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebInstanceId"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:408:5)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLab-t08/WebPrivateIp": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebPrivateIp"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:409:5)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLab-t08/AgentConfigParameter": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "AgentConfigParameter"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:410:5)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLab-t08/LogGroups": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LogGroups"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:411:5)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLab-t08/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLab-t08/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLab-t08/AccessLogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "AccessLogGroupEC82D238"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new LogGroup2 in aws-cdk-lib...",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:290 (:)",
+        "Array.forEach (:)",
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:289:39)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLab-t08/SSHLogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SSHLogGroupB966839D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new LogGroup2 in aws-cdk-lib...",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:290 (:)",
+        "Array.forEach (:)",
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:289:39)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLab-t08/AgentConfig/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "AgentConfigCC493EA4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new StringParameter2 in aws-cdk-lib...",
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:312:5)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLab-t08/WebSg/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSg75AA54D5"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new SecurityGroup2 in aws-cdk-lib...",
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:319:19)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLab-t08/DbSgRef/from LogsLabt08WebSgA4112269:3306": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DbSgReffromLogsLabt08WebSgA41122693306B82B69FF"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...MutableImport.addIngressRule in aws-cdk-lib...",
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:331:13)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLab-t08/WebRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebRoleCD6F4B98"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Role2 in aws-cdk-lib...",
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:334:18)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLab-t08/Web/InstanceProfile": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebInstanceProfile4AD67746"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Instance2 in aws-cdk-lib...",
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:388:17)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLab-t08/Web/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Web3C8945DB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Instance2 in aws-cdk-lib...",
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:388:17)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:419:12)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLab-t08/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLab-t08/WebRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebRoleDefaultPolicy74B6FB9F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...PropertyInjectable.<anonymous> in aws-cdk-lib...",
+        "new TraineeStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:341:10)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420: (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:420:1)",
+        "Array.forEach (:)"
+      ]
+    }
+  ]
+}

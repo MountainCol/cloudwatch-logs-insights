@@ -1,0 +1,36 @@
+{
+  "version": "55.0.0",
+  "files": {
+    "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6": {
+      "displayName": "LogsLabShared/Custom::S3AutoDeleteObjectsCustomResourceProvider Code",
+      "source": {
+        "path": "asset.faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "827602716979-eu-west-2-236cf843": {
+          "bucketName": "cdk-hnb659fds-assets-827602716979-eu-west-2",
+          "objectKey": "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6.zip",
+          "region": "eu-west-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::827602716979:role/cdk-hnb659fds-file-publishing-role-827602716979-eu-west-2"
+        }
+      }
+    },
+    "c0f397163e016075883fdf2cc56e07af29d2098edec454e040b4ad8402b2c443": {
+      "displayName": "LogsLabShared Template",
+      "source": {
+        "path": "LogsLabShared.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "827602716979-eu-west-2-ae79168e": {
+          "bucketName": "cdk-hnb659fds-assets-827602716979-eu-west-2",
+          "objectKey": "c0f397163e016075883fdf2cc56e07af29d2098edec454e040b4ad8402b2c443.json",
+          "region": "eu-west-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::827602716979:role/cdk-hnb659fds-file-publishing-role-827602716979-eu-west-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

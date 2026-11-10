@@ -1,0 +1,20 @@
+{
+  "region": "eu-west-2",
+  "vpcId": "vpc-0123456789abcdef0",
+  "webSubnets": [
+    { "id": "subnet-0aaaaaaaaaaaaaaaa", "az": "eu-west-2a" },
+    { "id": "subnet-0bbbbbbbbbbbbbbbb", "az": "eu-west-2b" }
+  ],
+  "dbSubnets": [
+    { "id": "subnet-0cccccccccccccccc", "az": "eu-west-2a" },
+    { "id": "subnet-0dddddddddddddddd", "az": "eu-west-2b" }
+  ],
+  "assignPublicIp": false,
+  "webIngressCidr": "",
+  "instanceType": "t3.micro",
+  "generatorInstanceType": "t3.micro",
+  "dbInstanceClass": "t3.small",
+  "enableDbErrorLogExport": true,
+  "createTrail": true,
+  "traineeIds": ["t01", "t02", "t03"]
+}

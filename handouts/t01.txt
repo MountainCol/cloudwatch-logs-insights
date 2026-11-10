@@ -1,0 +1,25 @@
+LAB 12: COLLECTING AND ANALYSING LOGS WITH AMAZON CLOUDWATCH LOGS INSIGHTS
+Trainee ID: t01          Region: eu-west-2 (Europe, London)
+
+Your web server (Linux)
+  Instance name ........... LinuxEC2Host-t01
+  Instance ID ............. i-0dbb3513220de679c
+  Private IP address ...... 10.0.4.97
+
+Names you will type
+  Run Command, Task 1.3 ... tag key CloudwatchAgentInstalled, tag value t01
+  Run Command, Task 1.4 ... tag key MonitoringConfig, tag value BasicMixOSMonitoring-t01
+  Agent configuration ..... ConfigParamForEC2s-t01
+  Output bucket ........... logslabshared-logbucketcc3b17e8-f3ze8olmpbbb   (S3 key prefix: t01)
+  Flow log group (you create it) ... VPCFlowLogGroup-t01
+  Flow log service role ... LogsLab-VPCFlowLogsRole
+  Your log groups ......... AccessLogGroup-t01 and SSHLogGroup-t01
+  Metric filter names ..... accesslogs-404-errors-t01 and ssh-invalid-user-t01
+  Metric namespace ........ WebsiteLogMetrics
+
+Shared by the whole class
+  Database (RDS) .......... labdb-shared   endpoint labdb-shared.cd64so2sc3d0.eu-west-2.rds.amazonaws.com
+  Database error log group  /aws/rds/instance/labdb-shared/error   (everyone's calls appear here: find yours by your private IP address)
+  CloudTrail log group .... CloudTrailLogGroup
+
+Always add your trainee ID to anything you create by hand, for example VPCFlowLogGroup-t01.

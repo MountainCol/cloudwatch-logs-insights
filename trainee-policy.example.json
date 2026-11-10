@@ -1,0 +1,73 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadAndExplore",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:Describe*",
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBLogFiles",
+        "s3:ListAllMyBuckets",
+        "s3:GetBucketLocation",
+        "ssm:Describe*",
+        "ssm:List*",
+        "ssm:GetDocument",
+        "ssm:GetParameter",
+        "ssm:GetParameters",
+        "ssm:GetCommandInvocation",
+        "cloudwatch:Describe*",
+        "cloudwatch:Get*",
+        "cloudwatch:List*",
+        "logs:Describe*",
+        "logs:Get*",
+        "logs:List*",
+        "logs:FilterLogEvents",
+        "logs:StartQuery",
+        "logs:StopQuery",
+        "logs:TestMetricFilter"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RunCommandAndSessions",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand",
+        "ssm:CancelCommand",
+        "ssm:StartSession",
+        "ssm:TerminateSession",
+        "ssm:ResumeSession"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "LabCreatedByHand",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:PutRetentionPolicy",
+        "logs:PutMetricFilter",
+        "logs:DeleteMetricFilter",
+        "ec2:CreateFlowLogs",
+        "ec2:CreateTags",
+        "cloudwatch:PutMetricAlarm",
+        "cloudwatch:DeleteAlarms"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PassFlowLogsRoleOnly",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::*:role/LogsLab-VPCFlowLogsRole",
+      "Condition": { "StringEquals": { "iam:PassedToService": "vpc-flow-logs.amazonaws.com" } }
+    },
+    {
+      "Sid": "ListRoleForConsoleDropdown",
+      "Effect": "Allow",
+      "Action": ["iam:ListRoles", "iam:GetRole"],
+      "Resource": "*"
+    }
+  ]
+}

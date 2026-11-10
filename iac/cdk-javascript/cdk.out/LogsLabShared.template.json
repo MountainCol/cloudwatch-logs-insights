@@ -1,0 +1,1012 @@
+{
+ "Resources": {
+  "LogBucketCC3B17E8": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "Tags": [
+     {
+      "Key": "aws-cdk:auto-delete-objects",
+      "Value": "true"
+     },
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/LogBucket/Resource"
+   }
+  },
+  "LogBucketPolicy900DBE48": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "LogBucketCC3B17E8"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "LogBucketCC3B17E8",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "LogBucketCC3B17E8",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:PutBucketPolicy",
+        "s3:GetBucket*",
+        "s3:List*",
+        "s3:DeleteObject*"
+       ],
+       "Effect": "Allow",
+       "Principal": {
+        "AWS": {
+         "Fn::GetAtt": [
+          "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+          "Arn"
+         ]
+        }
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "LogBucketCC3B17E8",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "LogBucketCC3B17E8",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/LogBucket/Policy/Resource"
+   }
+  },
+  "LogBucketAutoDeleteObjectsCustomResource7762F42C": {
+   "Type": "Custom::S3AutoDeleteObjects",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+      "Arn"
+     ]
+    },
+    "BucketName": {
+     "Ref": "LogBucketCC3B17E8"
+    }
+   },
+   "DependsOn": [
+    "LogBucketPolicy900DBE48"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/LogBucket/AutoDeleteObjectsCustomResource/Default"
+   }
+  },
+  "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Version": "2012-10-17",
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ]
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role"
+   }
+  },
+  "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-827602716979-eu-west-2",
+     "S3Key": "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6.zip"
+    },
+    "Timeout": 900,
+    "MemorySize": 128,
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs24.x",
+    "Description": {
+     "Fn::Join": [
+      "",
+      [
+       "Lambda function for auto-deleting objects in ",
+       {
+        "Ref": "LogBucketCC3B17E8"
+       },
+       " S3 bucket."
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
+    "aws:asset:path": "asset.faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6",
+    "aws:asset:property": "Code"
+   }
+  },
+  "FlowLogsRoleA00E6A39": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "vpc-flow-logs.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Description": "Lets VPC Flow Logs publish to VPCFlowLogGroup-* log groups",
+    "RoleName": "LogsLab-VPCFlowLogsRole",
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/FlowLogsRole/Resource"
+   }
+  },
+  "FlowLogsRoleDefaultPolicy4A66171F": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "logs:DescribeLogGroups",
+        "logs:DescribeLogStreams"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      },
+      {
+       "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":logs:eu-west-2:827602716979:log-group:VPCFlowLogGroup-*:*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "FlowLogsRoleDefaultPolicy4A66171F",
+    "Roles": [
+     {
+      "Ref": "FlowLogsRoleA00E6A39"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/FlowLogsRole/DefaultPolicy/Resource"
+   }
+  },
+  "TrailBucketA831CE63": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "Tags": [
+     {
+      "Key": "aws-cdk:auto-delete-objects",
+      "Value": "true"
+     },
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/TrailBucket/Resource"
+   }
+  },
+  "TrailBucketPolicyFEBC3C5C": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "TrailBucketA831CE63"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "TrailBucketA831CE63",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "TrailBucketA831CE63",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:PutBucketPolicy",
+        "s3:GetBucket*",
+        "s3:List*",
+        "s3:DeleteObject*"
+       ],
+       "Effect": "Allow",
+       "Principal": {
+        "AWS": {
+         "Fn::GetAtt": [
+          "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+          "Arn"
+         ]
+        }
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "TrailBucketA831CE63",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "TrailBucketA831CE63",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "s3:GetBucketAcl",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "cloudtrail.amazonaws.com"
+       },
+       "Resource": {
+        "Fn::GetAtt": [
+         "TrailBucketA831CE63",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": "s3:PutObject",
+       "Condition": {
+        "StringEquals": {
+         "s3:x-amz-acl": "bucket-owner-full-control"
+        }
+       },
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "cloudtrail.amazonaws.com"
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "TrailBucketA831CE63",
+            "Arn"
+           ]
+          },
+          "/AWSLogs/827602716979/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/TrailBucket/Policy/Resource"
+   }
+  },
+  "TrailBucketAutoDeleteObjectsCustomResource8D1A7617": {
+   "Type": "Custom::S3AutoDeleteObjects",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+      "Arn"
+     ]
+    },
+    "BucketName": {
+     "Ref": "TrailBucketA831CE63"
+    }
+   },
+   "DependsOn": [
+    "TrailBucketPolicyFEBC3C5C"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/TrailBucket/AutoDeleteObjectsCustomResource/Default"
+   }
+  },
+  "CloudTrailLogGroup343A29D6": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "LogGroupName": "CloudTrailLogGroup",
+    "RetentionInDays": 7,
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/CloudTrailLogGroup/Resource"
+   }
+  },
+  "TrailLogsRole83B70503": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "cloudtrail.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/Trail/LogsRole/Resource"
+   }
+  },
+  "TrailLogsRoleDefaultPolicy563657A5": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "logs:PutLogEvents",
+        "logs:CreateLogStream"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "CloudTrailLogGroup343A29D6",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "TrailLogsRoleDefaultPolicy563657A5",
+    "Roles": [
+     {
+      "Ref": "TrailLogsRole83B70503"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/Trail/LogsRole/DefaultPolicy/Resource"
+   }
+  },
+  "Trail022F0CF2": {
+   "Type": "AWS::CloudTrail::Trail",
+   "Properties": {
+    "CloudWatchLogsLogGroupArn": {
+     "Fn::GetAtt": [
+      "CloudTrailLogGroup343A29D6",
+      "Arn"
+     ]
+    },
+    "CloudWatchLogsRoleArn": {
+     "Fn::GetAtt": [
+      "TrailLogsRole83B70503",
+      "Arn"
+     ]
+    },
+    "EnableLogFileValidation": true,
+    "EventSelectors": [
+     {
+      "IncludeManagementEvents": true,
+      "ReadWriteType": "All"
+     }
+    ],
+    "IncludeGlobalServiceEvents": true,
+    "IsLogging": true,
+    "IsMultiRegionTrail": false,
+    "S3BucketName": {
+     "Ref": "TrailBucketA831CE63"
+    },
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     }
+    ],
+    "TrailName": "LogsLab-Trail"
+   },
+   "DependsOn": [
+    "TrailLogsRoleDefaultPolicy563657A5",
+    "TrailLogsRole83B70503",
+    "TrailBucketPolicyFEBC3C5C"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/Trail/Resource"
+   }
+  },
+  "DbSg495F8305": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Lab 12 shared database: MySQL from trainee web servers only",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "255.255.255.255/32",
+      "Description": "Disallow all traffic",
+      "FromPort": 252,
+      "IpProtocol": "icmp",
+      "ToPort": 86
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     }
+    ],
+    "VpcId": "vpc-0123456789abcdef0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/DbSg/Resource"
+   }
+  },
+  "DbSubnetGroup": {
+   "Type": "AWS::RDS::DBSubnetGroup",
+   "Properties": {
+    "DBSubnetGroupDescription": "Lab 12 shared database subnet group",
+    "SubnetIds": [
+     "subnet-07de4eaa6e4493579",
+     "subnet-00cefdbb6d81d0065"
+    ],
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/DbSubnetGroup/Default"
+   }
+  },
+  "LogsLabSharedDbSecret3430E5EA3fdaad7efa858a3daf9490cf0a702aeb": {
+   "Type": "AWS::SecretsManager::Secret",
+   "Properties": {
+    "Description": {
+     "Fn::Join": [
+      "",
+      [
+       "Generated by the CDK for stack: ",
+       {
+        "Ref": "AWS::StackName"
+       }
+      ]
+     ]
+    },
+    "GenerateSecretString": {
+     "ExcludeCharacters": " %+~`#$&*()|[]{}:;<>?!'/@\"\\",
+     "GenerateStringKey": "password",
+     "PasswordLength": 30,
+     "SecretStringTemplate": "{\"username\":\"labadmin\"}"
+    },
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/Db/Secret/Resource"
+   }
+  },
+  "DbSecretAttachment7AED447C": {
+   "Type": "AWS::SecretsManager::SecretTargetAttachment",
+   "Properties": {
+    "SecretId": {
+     "Ref": "LogsLabSharedDbSecret3430E5EA3fdaad7efa858a3daf9490cf0a702aeb"
+    },
+    "TargetId": {
+     "Ref": "Db5D02A0A9"
+    },
+    "TargetType": "AWS::RDS::DBInstance"
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/Db/Secret/Attachment/Resource"
+   }
+  },
+  "Db5D02A0A9": {
+   "Type": "AWS::RDS::DBInstance",
+   "Properties": {
+    "AllocatedStorage": "20",
+    "BackupRetentionPeriod": 0,
+    "CopyTagsToSnapshot": true,
+    "DBInstanceClass": "db.t3.small",
+    "DBInstanceIdentifier": "labdb-shared",
+    "DBSubnetGroupName": {
+     "Ref": "DbSubnetGroup"
+    },
+    "DeleteAutomatedBackups": true,
+    "DeletionProtection": false,
+    "EnableCloudwatchLogsExports": [
+     "error"
+    ],
+    "Engine": "mysql",
+    "EngineVersion": "8.0",
+    "MasterUserPassword": {
+     "Fn::Join": [
+      "",
+      [
+       "{{resolve:secretsmanager:",
+       {
+        "Ref": "LogsLabSharedDbSecret3430E5EA3fdaad7efa858a3daf9490cf0a702aeb"
+       },
+       ":SecretString:password::}}"
+      ]
+     ]
+    },
+    "MasterUsername": "labadmin",
+    "MultiAZ": false,
+    "PubliclyAccessible": false,
+    "StorageEncrypted": true,
+    "StorageType": "gp2",
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     }
+    ],
+    "VPCSecurityGroups": [
+     {
+      "Fn::GetAtt": [
+       "DbSg495F8305",
+       "GroupId"
+      ]
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/Db/Resource"
+   }
+  },
+  "GeneratorSg0ED92761": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Lab 12 traffic generator",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     }
+    ],
+    "VpcId": "vpc-0123456789abcdef0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/GeneratorSg/Resource"
+   }
+  },
+  "GeneratorRole3C71DAA0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/AmazonSSMManagedInstanceCore"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/GeneratorRole/Resource"
+   }
+  },
+  "GeneratorRoleDefaultPolicyD357FECA": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "ec2:DescribeInstances",
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "GeneratorRoleDefaultPolicyD357FECA",
+    "Roles": [
+     {
+      "Ref": "GeneratorRole3C71DAA0"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/GeneratorRole/DefaultPolicy/Resource"
+   }
+  },
+  "GeneratorInstanceProfile146E498A": {
+   "Type": "AWS::IAM::InstanceProfile",
+   "Properties": {
+    "Roles": [
+     {
+      "Ref": "GeneratorRole3C71DAA0"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/Generator/InstanceProfile"
+   }
+  },
+  "Generator170C31BEab4bb9307d900271": {
+   "Type": "AWS::EC2::Instance",
+   "Properties": {
+    "AvailabilityZone": "eu-west-2a",
+    "IamInstanceProfile": {
+     "Ref": "GeneratorInstanceProfile146E498A"
+    },
+    "ImageId": {
+     "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61x8664C96584B6F00A464EAD1953AFF4B05118Parameter"
+    },
+    "InstanceType": "t3.micro",
+    "SecurityGroupIds": [
+     {
+      "Fn::GetAtt": [
+       "GeneratorSg0ED92761",
+       "GroupId"
+      ]
+     }
+    ],
+    "SubnetId": "subnet-02aaa27e241010c15",
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     },
+     {
+      "Key": "LabRole",
+      "Value": "generator"
+     },
+     {
+      "Key": "Name",
+      "Value": "LogsLab-TrafficGenerator"
+     }
+    ],
+    "UserData": {
+     "Fn::Base64": "#!/bin/bash\nset -x\ndnf install -y openssh-clients\nmkdir -p /opt/lab\necho \"LAB_REGION=eu-west-2\" > /opt/lab/gen.env\ncat > /opt/lab/generate-traffic.sh <<'LABEOF'\n#!/bin/bash\n# Lab 12 traffic generator: ordinary requests, missing pages, closed-port probes and\n# invalid SSH log-ins against every running trainee web server. Training use only.\n. /opt/lab/gen.env\nprobe() {\n  ip=\"$1\"; UA=\"\"\n  case $((RANDOM % 3)) in\n    0) UA=\"Mozilla/5.0 (X11; Linux x86_64) TrainingBrowser/1.0\" ;;\n    1) UA=\"lab-healthcheck/1.0\" ;;\n    *) UA=\"curl-training/1.0\" ;;\n  esac\n  for i in 1 2 3 4 5 6; do curl -s -o /dev/null -m 3 -A \"$UA\" \"http://$ip/\"; done\n  for p in missing.html wp-login.php admin/ old-page.html; do curl -s -o /dev/null -m 3 -A \"$UA\" \"http://$ip/$p\"; done\n  for port in 23 3389 8080; do timeout 2 bash -c \"echo > /dev/tcp/$ip/$port\" 2>/dev/null; done\n  for u in admin test ec2-user; do\n    ssh -o BatchMode=yes -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=3 \"$u@$ip\" true >/dev/null 2>&1\n  done\n}\nwhile true; do\n  TARGETS=$(aws ec2 describe-instances --region \"$LAB_REGION\" \\\n    --filters \"Name=tag:LabName,Values=cloudwatch-logs-insights\" \"Name=tag:LabRole,Values=web\" \"Name=instance-state-name,Values=running\" \\\n    --query 'Reservations[].Instances[].PrivateIpAddress' --output text 2>/dev/null)\n  # One background job per server, so 15 servers take about as long as one.\n  for ip in $TARGETS; do probe \"$ip\" & done\n  wait\n  sleep 60\ndone\nLABEOF\nchmod 755 /opt/lab/generate-traffic.sh\ncat > /etc/systemd/system/lab-generator.service <<'LABEOF'\n[Unit]\nDescription=Lab 12 traffic generator\nAfter=network-online.target\nWants=network-online.target\n[Service]\nExecStart=/opt/lab/generate-traffic.sh\nRestart=always\n[Install]\nWantedBy=multi-user.target\nLABEOF\nchmod 644 /etc/systemd/system/lab-generator.service\nsystemctl daemon-reload\nsystemctl enable --now lab-generator.service"
+    }
+   },
+   "DependsOn": [
+    "GeneratorRoleDefaultPolicyD357FECA",
+    "GeneratorRole3C71DAA0"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/Generator/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/6VSTUsDMRD9Le45jdqigreuBRGElq43EZlmp2va3aRkJn4Q8t8lG7pt9SSe5mXee5nHMGM5vrmSF2fwQSNVb0etXslQMaitWCJZ7xQK+KDXQBMZSq+2yOJubTJ6DkWnP7Upbotjf9LTRPYUySyderYzbJFxvtqgYiqi+Jf7RWRqYVutvg6Z8vsPybKhYmDs0Pwx2G/zSxQaOhmWtsWUqq+HkAf0YIjBKFw4u9YtRtHahmR4tM29s36XJHschWqtr9mBbmV4SiXRPYgC1ViGCpV3mr8G72ljP+x4cBSuJhkqvzLIg29WHjdmwLACwsG/b1SoXD6FWXn4kPoudWCgQSdDzpGEuTyBa5CnzKDe0r7EIPjJxCjuPLHthitMuxzwCbVw9l3X6EogFFMi5Iqh0abpFw4OOmR06TH3vPMchbE1yg2dv4+v5eVEXpxtSOuR84Z1h3KZ6zf+1YOrGwMAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLabShared/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61x8664C96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+   "Default": "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-x86_64"
+  },
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Outputs": {
+  "LogBucketName": {
+   "Description": "Choose this bucket for Run Command output",
+   "Value": {
+    "Ref": "LogBucketCC3B17E8"
+   }
+  },
+  "FlowLogsRoleName": {
+   "Value": {
+    "Ref": "FlowLogsRoleA00E6A39"
+   }
+  },
+  "DbIdentifier": {
+   "Value": {
+    "Ref": "Db5D02A0A9"
+   }
+  },
+  "DbEndpoint": {
+   "Value": {
+    "Fn::GetAtt": [
+     "Db5D02A0A9",
+     "Endpoint.Address"
+    ]
+   }
+  },
+  "GeneratorInstanceId": {
+   "Value": {
+    "Ref": "Generator170C31BEab4bb9307d900271"
+   }
+  },
+  "CloudTrailLogGroupName": {
+   "Value": "CloudTrailLogGroup"
+  },
+  "ExportsOutputFnGetAttGeneratorSg0ED92761GroupId09FEA284": {
+   "Value": {
+    "Fn::GetAtt": [
+     "GeneratorSg0ED92761",
+     "GroupId"
+    ]
+   },
+   "Export": {
+    "Name": "LogsLabShared:ExportsOutputFnGetAttGeneratorSg0ED92761GroupId09FEA284"
+   }
+  },
+  "ExportsOutputFnGetAttDbSg495F8305GroupIdA39418C8": {
+   "Value": {
+    "Fn::GetAtt": [
+     "DbSg495F8305",
+     "GroupId"
+    ]
+   },
+   "Export": {
+    "Name": "LogsLabShared:ExportsOutputFnGetAttDbSg495F8305GroupIdA39418C8"
+   }
+  },
+  "ExportsOutputRefLogBucketCC3B17E818DCEC53": {
+   "Value": {
+    "Ref": "LogBucketCC3B17E8"
+   },
+   "Export": {
+    "Name": "LogsLabShared:ExportsOutputRefLogBucketCC3B17E818DCEC53"
+   }
+  },
+  "ExportsOutputFnGetAttDb5D02A0A9EndpointAddressCFF54B34": {
+   "Value": {
+    "Fn::GetAtt": [
+     "Db5D02A0A9",
+     "Endpoint.Address"
+    ]
+   },
+   "Export": {
+    "Name": "LogsLabShared:ExportsOutputFnGetAttDb5D02A0A9EndpointAddressCFF54B34"
+   }
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

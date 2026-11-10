@@ -1,0 +1,665 @@
+{
+  "/LogsLabShared": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:templateFile",
+      "data": "LogsLabShared.template.json"
+    },
+    {
+      "type": "aws:cdk:stack-tags",
+      "data": [
+        {
+          "key": "LabName",
+          "value": "cloudwatch-logs-insights"
+        }
+      ]
+    }
+  ],
+  "/LogsLabShared/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+    {
+      "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+      "data": true
+    }
+  ],
+  "/LogsLabShared/DbSubnet0": [
+    {
+      "type": "aws:cdk:warning",
+      "data": "No routeTableId was provided to the subnet 'subnet-07de4eaa6e4493579'. Attempting to read its .routeTable.routeTableId will return null/undefined. (More info: https://github.com/aws/aws-cdk/pull/3171) [ack: @aws-cdk/aws-ec2:noSubnetRouteTableId]",
+      "trace": [
+        "Annotations.addMessage (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:3506)",
+        "Annotations.addWarningV2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:2194)",
+        "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:53437)",
+        "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\prop-injectable.js:1:861)",
+        "Subnet2.fromSubnetAttributes (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:35023)",
+        "importSubnet (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:86:21)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:167:54",
+        "Array.map (<anonymous>)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:167:40)",
+        "Object.<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "Module._compile (node:internal/modules/cjs/loader:1968:14)",
+        "Object..js (node:internal/modules/cjs/loader:2108:10)",
+        "Module.load (node:internal/modules/cjs/loader:1690:32)",
+        "Module._load (node:internal/modules/cjs/loader:1480:12)",
+        "wrapModuleLoad (node:internal/modules/cjs/loader:261:19)",
+        "Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)",
+        "node:internal/main/run_main_module:33:47"
+      ]
+    }
+  ],
+  "/LogsLabShared/DbSubnet1": [
+    {
+      "type": "aws:cdk:warning",
+      "data": "No routeTableId was provided to the subnet 'subnet-00cefdbb6d81d0065'. Attempting to read its .routeTable.routeTableId will return null/undefined. (More info: https://github.com/aws/aws-cdk/pull/3171) [ack: @aws-cdk/aws-ec2:noSubnetRouteTableId]",
+      "trace": [
+        "Annotations.addMessage (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:3506)",
+        "Annotations.addWarningV2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:2194)",
+        "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:53437)",
+        "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\prop-injectable.js:1:861)",
+        "Subnet2.fromSubnetAttributes (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:35023)",
+        "importSubnet (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:86:21)",
+        "C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:167:54",
+        "Array.map (<anonymous>)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:167:40)",
+        "Object.<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "Module._compile (node:internal/modules/cjs/loader:1968:14)",
+        "Object..js (node:internal/modules/cjs/loader:2108:10)",
+        "Module.load (node:internal/modules/cjs/loader:1690:32)",
+        "Module._load (node:internal/modules/cjs/loader:1480:12)",
+        "wrapModuleLoad (node:internal/modules/cjs/loader:261:19)",
+        "Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)",
+        "node:internal/main/run_main_module:33:47"
+      ]
+    }
+  ],
+  "/LogsLabShared/GeneratorSubnet": [
+    {
+      "type": "aws:cdk:warning",
+      "data": "No routeTableId was provided to the subnet 'subnet-02aaa27e241010c15'. Attempting to read its .routeTable.routeTableId will return null/undefined. (More info: https://github.com/aws/aws-cdk/pull/3171) [ack: @aws-cdk/aws-ec2:noSubnetRouteTableId]",
+      "trace": [
+        "Annotations.addMessage (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:3506)",
+        "Annotations.addWarningV2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:2194)",
+        "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:53437)",
+        "new ImportedSubnet2 (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\core\\lib\\prop-injectable.js:1:861)",
+        "Subnet2.fromSubnetAttributes (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:35023)",
+        "importSubnet (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:86:21)",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:258:31)",
+        "Object.<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "Module._compile (node:internal/modules/cjs/loader:1968:14)",
+        "Object..js (node:internal/modules/cjs/loader:2108:10)",
+        "Module.load (node:internal/modules/cjs/loader:1690:32)",
+        "Module._load (node:internal/modules/cjs/loader:1480:12)",
+        "wrapModuleLoad (node:internal/modules/cjs/loader:261:19)",
+        "Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)",
+        "node:internal/main/run_main_module:33:47"
+      ]
+    }
+  ],
+  "/LogsLabShared/SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-x86_64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61x8664C96584B6F00A464EAD1953AFF4B05118Parameter"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Instance2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:252:23)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)"
+      ]
+    }
+  ],
+  "/LogsLabShared/LogBucketName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LogBucketName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:271:5)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/FlowLogsRoleName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "FlowLogsRoleName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:272:5)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/DbIdentifier": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DbIdentifier"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:273:5)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/DbEndpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DbEndpoint"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:274:5)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/GeneratorInstanceId": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "GeneratorInstanceId"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:275:5)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/CloudTrailLogGroupName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CloudTrailLogGroupName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:276:5)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLabShared/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLabShared/LogBucket/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LogBucketCC3B17E8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:110:23)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketAutoDeleteObjects"
+      }
+    }
+  ],
+  "/LogsLabShared/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLabShared/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLabShared/FlowLogsRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "FlowLogsRoleA00E6A39"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Role2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:119:22)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/TrailBucket/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TrailBucketA831CE63"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:135:27)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketAutoDeleteObjects"
+      }
+    }
+  ],
+  "/LogsLabShared/CloudTrailLogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CloudTrailLogGroup343A29D6"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new LogGroup2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:142:29)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/Trail/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Trail022F0CF2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Trail2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:147:7)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/DbSg/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DbSg495F8305"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new SecurityGroup2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:159:17)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/DbSubnetGroup/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DbSubnetGroup"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new SubnetGroup2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:164:25)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/Db/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Db5D02A0A9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseInstance2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:170:15)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/GeneratorSg/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "GeneratorSg0ED92761"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new SecurityGroup2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:192:24)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/GeneratorRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "GeneratorRole3C71DAA0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Role2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:197:21)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/Generator/InstanceProfile": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "GeneratorInstanceProfile146E498A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Instance2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:252:23)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/Generator/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Generator170C31BEab4bb9307d900271"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Instance2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:252:23)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLabShared/Exports/Output{\"Fn::GetAtt\":[\"GeneratorSg0ED92761\",\"GroupId\"]}": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ExportsOutputFnGetAttGeneratorSg0ED92761GroupId09FEA284"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLabShared/Exports/Output{\"Fn::GetAtt\":[\"DbSg495F8305\",\"GroupId\"]}": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ExportsOutputFnGetAttDbSg495F8305GroupIdA39418C8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLabShared/Exports/Output{\"Ref\":\"LogBucketCC3B17E8\"}": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ExportsOutputRefLogBucketCC3B17E818DCEC53"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLabShared/Exports/Output{\"Fn::GetAtt\":[\"Db5D02A0A9\",\"Endpoint.Address\"]}": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ExportsOutputFnGetAttDb5D02A0A9EndpointAddressCFF54B34"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLabShared/LogBucket/Policy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LogBucketPolicy900DBE48"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:110:23)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)"
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketPolicyStatements"
+      }
+    }
+  ],
+  "/LogsLabShared/LogBucket/AutoDeleteObjectsCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LogBucketAutoDeleteObjectsCustomResource7762F42C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLabShared/FlowLogsRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "FlowLogsRoleDefaultPolicy4A66171F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...PropertyInjectable.<anonymous> in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:124:14)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/TrailBucket/Policy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TrailBucketPolicyFEBC3C5C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:135:27)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)"
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketPolicyStatements"
+      }
+    }
+  ],
+  "/LogsLabShared/TrailBucket/AutoDeleteObjectsCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TrailBucketAutoDeleteObjectsCustomResource8D1A7617"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/LogsLabShared/Trail/LogsRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TrailLogsRole83B70503"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Trail2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:147:7)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/Db/Secret/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LogsLabSharedDbSecret3430E5EA3fdaad7efa858a3daf9490cf0a702aeb"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseInstance2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:170:15)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)"
+      ]
+    }
+  ],
+  "/LogsLabShared/GeneratorRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "GeneratorRoleDefaultPolicyD357FECA"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...PropertyInjectable.<anonymous> in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:201:13)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/Trail/LogsRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TrailLogsRoleDefaultPolicy563657A5"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Trail2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:147:7)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/LogsLabShared/Db/Secret/Attachment/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DbSecretAttachment7AED447C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseInstance2 in aws-cdk-lib...",
+        "new SharedStack (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:170:15)",
+        "<anonymous> (C:\\Users\\ColinHenderson\\Monitoring and Alerting in AWS\\cloudwatch-logs-insights\\iac\\cdk-javascript\\app.js:418:16)",
+        "...node internals..."
+      ]
+    }
+  ]
+}

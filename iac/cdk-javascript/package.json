@@ -1,0 +1,17 @@
+{
+  "name": "lab12-cloudwatch-logs-insights",
+  "version": "1.0.0",
+  "description": "Lab 12: collecting and analysing logs with Amazon CloudWatch Logs Insights (AWS CDK, JavaScript)",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "synth": "cdk synth"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.100.0",
+    "constructs": "^10.0.0"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.100.0"
+  }
+}

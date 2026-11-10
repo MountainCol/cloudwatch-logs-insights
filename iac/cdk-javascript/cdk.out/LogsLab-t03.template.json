@@ -1,0 +1,418 @@
+{
+ "Resources": {
+  "AccessLogGroupEC82D238": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "LogGroupName": "AccessLogGroup-t03",
+    "RetentionInDays": 7,
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     },
+     {
+      "Key": "Trainee",
+      "Value": "t03"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "LogsLab-t03/AccessLogGroup/Resource"
+   }
+  },
+  "SSHLogGroupB966839D": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "LogGroupName": "SSHLogGroup-t03",
+    "RetentionInDays": 7,
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     },
+     {
+      "Key": "Trainee",
+      "Value": "t03"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "LogsLab-t03/SSHLogGroup/Resource"
+   }
+  },
+  "AgentConfigCC493EA4": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Description": "CloudWatch agent configuration for lab 12, trainee t03",
+    "Name": "ConfigParamForEC2s-t03",
+    "Tags": {
+     "LabName": "cloudwatch-logs-insights",
+     "Trainee": "t03"
+    },
+    "Type": "String",
+    "Value": "{\"agent\":{\"run_as_user\":\"root\"},\"logs\":{\"logs_collected\":{\"files\":{\"collect_list\":[{\"file_path\":\"/var/log/httpd/access_log\",\"log_group_name\":\"AccessLogGroup-t03\",\"log_stream_name\":\"{instance_id}-http.log\"},{\"file_path\":\"/var/log/secure\",\"log_group_name\":\"SSHLogGroup-t03\",\"log_stream_name\":\"{instance_id}-secure.log\"}]}}}}"
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLab-t03/AgentConfig/Resource"
+   }
+  },
+  "WebSg75AA54D5": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Lab 12 web server, trainee t03",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "SecurityGroupIngress": [
+     {
+      "Description": "HTTP from the traffic generator",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "SourceSecurityGroupId": {
+       "Fn::ImportValue": "LogsLabShared:ExportsOutputFnGetAttGeneratorSg0ED92761GroupId09FEA284"
+      },
+      "ToPort": 80
+     },
+     {
+      "Description": "SSH from the traffic generator (so invalid log-ins reach the SSH log)",
+      "FromPort": 22,
+      "IpProtocol": "tcp",
+      "SourceSecurityGroupId": {
+       "Fn::ImportValue": "LogsLabShared:ExportsOutputFnGetAttGeneratorSg0ED92761GroupId09FEA284"
+      },
+      "ToPort": 22
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     },
+     {
+      "Key": "Trainee",
+      "Value": "t03"
+     }
+    ],
+    "VpcId": "vpc-0123456789abcdef0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLab-t03/WebSg/Resource"
+   }
+  },
+  "DbSgReffromLogsLabt03WebSg8170DD363306AFEA7015": {
+   "Type": "AWS::EC2::SecurityGroupIngress",
+   "Properties": {
+    "Description": "MySQL from web server of trainee t03",
+    "FromPort": 3306,
+    "GroupId": {
+     "Fn::ImportValue": "LogsLabShared:ExportsOutputFnGetAttDbSg495F8305GroupIdA39418C8"
+    },
+    "IpProtocol": "tcp",
+    "SourceSecurityGroupId": {
+     "Fn::GetAtt": [
+      "WebSg75AA54D5",
+      "GroupId"
+     ]
+    },
+    "ToPort": 3306
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLab-t03/DbSgRef/from LogsLabt03WebSg8170DD36:3306"
+   }
+  },
+  "WebRoleCD6F4B98": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/AmazonSSMManagedInstanceCore"
+       ]
+      ]
+     },
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/CloudWatchAgentServerPolicy"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     },
+     {
+      "Key": "Trainee",
+      "Value": "t03"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLab-t03/WebRole/Resource"
+   }
+  },
+  "WebRoleDefaultPolicy74B6FB9F": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "ssm:GetParameter",
+        "ssm:GetParameters"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":ssm:eu-west-2:827602716979:parameter/ConfigParamForEC2s-t03"
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "s3:PutObject",
+        "s3:PutObjectAcl",
+        "s3:GetEncryptionConfiguration",
+        "s3:GetBucketLocation"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":s3:::",
+           {
+            "Fn::ImportValue": "LogsLabShared:ExportsOutputRefLogBucketCC3B17E818DCEC53"
+           }
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":s3:::",
+           {
+            "Fn::ImportValue": "LogsLabShared:ExportsOutputRefLogBucketCC3B17E818DCEC53"
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "WebRoleDefaultPolicy74B6FB9F",
+    "Roles": [
+     {
+      "Ref": "WebRoleCD6F4B98"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLab-t03/WebRole/DefaultPolicy/Resource"
+   }
+  },
+  "WebInstanceProfile4AD67746": {
+   "Type": "AWS::IAM::InstanceProfile",
+   "Properties": {
+    "Roles": [
+     {
+      "Ref": "WebRoleCD6F4B98"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLab-t03/Web/InstanceProfile"
+   }
+  },
+  "Web3C8945DB": {
+   "Type": "AWS::EC2::Instance",
+   "Properties": {
+    "AvailabilityZone": "eu-west-2a",
+    "IamInstanceProfile": {
+     "Ref": "WebInstanceProfile4AD67746"
+    },
+    "ImageId": {
+     "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61x8664C96584B6F00A464EAD1953AFF4B05118Parameter"
+    },
+    "InstanceType": "t3.micro",
+    "SecurityGroupIds": [
+     {
+      "Fn::GetAtt": [
+       "WebSg75AA54D5",
+       "GroupId"
+      ]
+     }
+    ],
+    "SubnetId": "subnet-02aaa27e241010c15",
+    "Tags": [
+     {
+      "Key": "CloudwatchAgentInstalled",
+      "Value": "t03"
+     },
+     {
+      "Key": "LabName",
+      "Value": "cloudwatch-logs-insights"
+     },
+     {
+      "Key": "LabRole",
+      "Value": "web"
+     },
+     {
+      "Key": "MonitoringConfig",
+      "Value": "BasicMixOSMonitoring-t03"
+     },
+     {
+      "Key": "Name",
+      "Value": "LinuxEC2Host-t03"
+     },
+     {
+      "Key": "Trainee",
+      "Value": "t03"
+     }
+    ],
+    "UserData": {
+     "Fn::Base64": {
+      "Fn::Join": [
+       "",
+       [
+        "#!/bin/bash\nset -x\ndnf install -y httpd rsyslog mariadb105\nsystemctl enable --now rsyslog\nsystemctl enable --now httpd\necho '<html><body><h1>Log collection lab</h1><p>A simple web page hosted on Amazon Linux (trainee t03).</p></body></html>' > /var/www/html/index.html\nmkdir -p /opt/lab\necho \"DB_HOST=",
+        {
+         "Fn::ImportValue": "LogsLabShared:ExportsOutputFnGetAttDb5D02A0A9EndpointAddressCFF54B34"
+        },
+        "\" > /opt/lab/lab.env\ncat > /opt/lab/db-calls.sh <<'LABEOF'\n#!/bin/bash\n# Lab 12: a web tier calling its database tier. One call uses the right port with a wrong\n# password (fails inside MySQL). One uses the wrong port 4306 (blocked by the network).\n. /opt/lab/lab.env\nMYSQL_BIN=\"$(command -v mariadb || command -v mysql)\"\nwhile true; do\n  \"$MYSQL_BIN\" -h \"$DB_HOST\" -P 3306 -u labapp -p'NotTheRealPassword1' --connect-timeout=5 -e \"SELECT 1\" >/dev/null 2>&1\n  timeout 3 bash -c \"echo > /dev/tcp/$DB_HOST/4306\" 2>/dev/null\n  sleep 60\ndone\nLABEOF\nchmod 755 /opt/lab/db-calls.sh\ncat > /etc/systemd/system/lab-db-calls.service <<'LABEOF'\n[Unit]\nDescription=Lab 12 database calls\nAfter=network-online.target\nWants=network-online.target\n[Service]\nExecStart=/opt/lab/db-calls.sh\nRestart=always\n[Install]\nWantedBy=multi-user.target\nLABEOF\nchmod 644 /etc/systemd/system/lab-db-calls.service\nsystemctl daemon-reload\nsystemctl enable --now lab-db-calls.service"
+       ]
+      ]
+     }
+    }
+   },
+   "DependsOn": [
+    "WebRoleDefaultPolicy74B6FB9F",
+    "WebRoleCD6F4B98"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "LogsLab-t03/Web/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/32OTQrCMBCFz+I+HbWiHsCFCIKlHkBiHMtomshMokjI3aWVFty4et97vPkpoVwvYTbRLynM5V5YOkM6Bm3uqkbxkQ0q/ZJTsr4RSHvfbNnHh9pc3cBZibTdEJNrKs26xYDcNUaTFZoS0hFNZArvccX/YOcaRhG1cxK0M9gVBs6KdAup9raPe628JfPuD4809Cv2V7KY889fnTnE8IghK+cvCDeZPssVzBcwm9yEqODoArUI9Vc/GBsjIi8BAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "LogsLab-t03/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61x8664C96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+   "Default": "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-x86_64"
+  },
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Outputs": {
+  "WebInstanceId": {
+   "Value": {
+    "Ref": "Web3C8945DB"
+   }
+  },
+  "WebPrivateIp": {
+   "Value": {
+    "Fn::GetAtt": [
+     "Web3C8945DB",
+     "PrivateIp"
+    ]
+   }
+  },
+  "AgentConfigParameter": {
+   "Value": "ConfigParamForEC2s-t03"
+  },
+  "LogGroups": {
+   "Value": "AccessLogGroup-t03, SSHLogGroup-t03"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}
