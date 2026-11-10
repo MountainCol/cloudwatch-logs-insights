@@ -1,5 +1,9 @@
 .node
 node_modules/
+.node_modules
+
+
+
 
 cdk.out
 package-lock.json
